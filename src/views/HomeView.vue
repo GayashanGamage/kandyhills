@@ -3,12 +3,14 @@
     <Facility></Facility>
     <Footer></Footer>
     <Review></Review>
+    <QandA></QandA>
   </div>
 </template>
 
 <script setup>
 import Facility from "@/components/Facility.vue";
 import Footer from "@/components/Footer.vue";
+import QandA from "@/components/QandA.vue";
 import Review from "@/components/Review.vue";
 </script>
 
