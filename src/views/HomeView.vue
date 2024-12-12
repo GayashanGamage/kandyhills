@@ -6,6 +6,7 @@
     <QandA></QandA>
     <Rooms></Rooms>
     <Gallery></Gallery>
+    <Header></Header>
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import Facility from "@/components/Facility.vue";
 import Footer from "@/components/Footer.vue";
 import Gallery from "@/components/Gallery.vue";
+import Header from "@/components/Header.vue";
 import QandA from "@/components/QandA.vue";
 import Review from "@/components/Review.vue";
 import Rooms from "@/components/Rooms.vue";
