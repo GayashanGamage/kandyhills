@@ -5,12 +5,14 @@
     <Review></Review>
     <QandA></QandA>
     <Rooms></Rooms>
+    <Gallery></Gallery>
   </div>
 </template>
 
 <script setup>
 import Facility from "@/components/Facility.vue";
 import Footer from "@/components/Footer.vue";
+import Gallery from "@/components/Gallery.vue";
 import QandA from "@/components/QandA.vue";
 import Review from "@/components/Review.vue";
 import Rooms from "@/components/Rooms.vue";
