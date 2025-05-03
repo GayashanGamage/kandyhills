@@ -30,6 +30,7 @@
 
 <style scoped>
 .c-level-one-container {
+  margin-top: 20px;
   width: 97%;
   height: 678px;
   margin-inline: auto;
@@ -43,6 +44,7 @@
 .image {
   position: absolute;
   top: 0;
+  width: 100%;
   left: 0;
   border-radius: 14px;
   object-fit: cover;
@@ -52,7 +54,7 @@
   top: 0;
   left: 0;
   content: " ";
-  width: 100.5%;
+  width: 100%;
   height: inherit;
   border-radius: 16px;
   background: linear-gradient(

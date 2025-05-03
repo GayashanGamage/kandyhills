@@ -7,10 +7,12 @@
       </div>
     </div>
     <div class="content-container">
-      <span class="arrow-key material-icons">arrow_back_ios</span>
+      <span class="arrow-key material-icons" @click="move('up')"
+        >arrow_back_ios</span
+      >
       <div
         class="room-card"
-        v-for="(item, item_index) in rooms"
+        v-for="(item, item_index) in show"
         :key="item_index"
       >
         <div class="image-container" :id="item.id">
@@ -24,7 +26,7 @@
         <div class="features-container">
           <div
             class="features"
-            v-for="(i, i_index) in rooms[item_index].featurs"
+            v-for="(i, i_index) in show[item_index].featurs"
             :key="i_index"
           >
             <span class="material-icons">{{ i.icon }}</span>
@@ -33,15 +35,27 @@
           </div>
         </div>
       </div>
-      <span class="arrow-key material-icons">arrow_forward_ios</span>
+      <span class="arrow-key material-icons" @click="move('down')"
+        >arrow_forward_ios</span
+      >
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onBeforeMount, ref } from "vue";
 
-const rooms = [
+onBeforeMount(() => {
+  show.value = roomList.value.slice(0, 3);
+  //remove first three item in roomList
+  for (let i = 0; i < 3; i++) {
+    roomList.value.shift();
+  }
+});
+
+const show = ref([]);
+
+const roomList = ref([
   {
     id: 0,
     image:
@@ -55,7 +69,7 @@ const rooms = [
     ],
   },
   {
-    id: 0,
+    id: 1,
     image:
       "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_2/room2.jpg",
     name: "Dubble Room",
@@ -67,7 +81,7 @@ const rooms = [
     ],
   },
   {
-    id: 0,
+    id: 2,
     image:
       "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_3/room3.jpg",
     name: "Dualux Room",
@@ -78,7 +92,41 @@ const rooms = [
       { icon: "bed", name: "king size bed" },
     ],
   },
-];
+  {
+    id: 3,
+    image:
+      "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_4/room4.jpg",
+    name: "Hanymon Room",
+    price: 75000,
+    featurs: [
+      { icon: "hot_tub", name: "Hot water shower" },
+      { icon: "pool", name: "pool access" },
+      { icon: "bed", name: "king size bed" },
+    ],
+  },
+  {
+    id: 4,
+    image:
+      "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_5/room5.jpg",
+    name: "luxeryX Room",
+    price: 95000,
+    featurs: [
+      { icon: "hot_tub", name: "Hot water shower" },
+      { icon: "pool", name: "pool access" },
+      { icon: "bed", name: "king size bed" },
+    ],
+  },
+]);
+
+const move = (side) => {
+  if (side == "down") {
+    roomList.value.push(show.value.shift());
+    show.value.push(roomList.value.shift());
+  } else if (side == "up") {
+    roomList.value.unshift(show.value.pop());
+    show.value.unshift(roomList.value.pop());
+  }
+};
 </script>
 
 <style scoped>

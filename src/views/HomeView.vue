@@ -1,12 +1,12 @@
 <template>
   <div class="v-level-one-container">
-    <Facility></Facility>
-    <Footer></Footer>
-    <Review></Review>
-    <QandA></QandA>
-    <Rooms></Rooms>
-    <Gallery></Gallery>
     <Header></Header>
+    <Facility></Facility>
+    <Gallery></Gallery>
+    <Rooms></Rooms>
+    <QandA></QandA>
+    <Review></Review>
+    <Footer></Footer>
   </div>
 </template>
 
