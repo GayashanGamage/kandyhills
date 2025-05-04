@@ -1,30 +1,57 @@
 <template>
-  <div class="c-level-one-container">
-    <div class="main">
-      <div class="heading">
-        <h3 class="main-title">Frequently asked questions</h3>
-        <p class="main-description">
-          Everything you need to know about the product and billing.
-        </p>
-      </div>
-      <div class="content">
+  <div class="flex flex-col gap-6 p-10 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
+    <div class="flex flex-col gap-4">
+      <h3 class="font-black text-3xl">Frequently asked questions</h3>
+      <p class="text-lg font-light">
+        Everything you need to know about the product and billing.
+      </p>
+    </div>
+    <div class="lg:grid lg:grid-cols-2 flex flex-col sm:p-3 p-0 gap-4">
+      <div class="flex flex-col gap-6">
         <div
-          class="content-q"
-          v-for="item in questions"
+          class="flex flex-col gap-4 cursor-pointer select-none"
+          v-for="item in questions.slice(0,3)"
           :key="item.no"
           :id="item.id"
         >
           <div
-            class="question-container"
+            class="flex flex-row justify-between"
             @click="showAnsware(item.id, item.show)"
           >
-            <p class="question">{{ item.question }}</p>
-            <span class="toggle-icon material-icons">{{ item.icon }}</span>
+            <p class="sm:w-[80%] w-[92%] font-semibold sm:text-base text-sm">{{ item.question }}</p>
+            <span class="material-icons">{{ item.icon }}</span>
           </div>
-          <div class="content-a" v-if="item.show">{{ item.answare }}</div>
-          <hr class="question-devider" />
+          <div class="" v-if="item.show">
+              <p class="font-light">
+                {{ item.answare }}
+              </p>
+            </div>
+          <hr class="text-black/20" />
         </div>
       </div>
+      <div class="flex flex-col gap-6">
+        <div
+          class="flex flex-col gap-4 cursor-pointer select-none"
+          v-for="item in questions.slice(3,6)"
+          :key="item.no"
+          :id="item.id"
+        >
+          <div
+            class="flex flex-row justify-between"
+            @click="showAnsware(item.id, item.show)"
+          >
+            <p class="sm:w-[80%] w-[90%] font-semibold sm:text-base text-sm">{{ item.question }}</p>
+            <span class="material-icons">{{ item.icon }}</span>
+          </div>
+          <div class="" v-if="item.show">
+              <p class="font-light">
+                {{ item.answare }}
+              </p>
+            </div>
+          <hr class="text-black/20" />
+        </div>
+      </div>
+      
     </div>
   </div>
 </template>
@@ -65,6 +92,22 @@ const questions = ref([
     show: false,
     icon: "add",
   },
+  {
+    id: 4,
+    question:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, repudiandae?",
+    answare: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+    show: false,
+    icon: "add",
+  },
+  {
+    id: 5,
+    question:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, repudiandae?",
+    answare: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+    show: false,
+    icon: "add",
+  },
 ]);
 
 const showAnsware = (q_id, status) => {
@@ -77,71 +120,3 @@ const showAnsware = (q_id, status) => {
   }
 };
 </script>
-
-<style scoped>
-.c-level-one-container {
-  background-color: #f6f8fa;
-  width: 98%;
-  margin-inline: auto;
-  border-radius: 16px;
-  padding-block: 80px;
-}
-.main-title {
-  color: #101828;
-  text-align: center;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  font-family: Inter;
-}
-.main-description {
-  color: #667085;
-  text-align: center;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-  font-family: Inter;
-}
-.content {
-  width: 60%;
-  margin-inline: auto;
-  margin-top: 34px;
-}
-.question-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.question {
-  color: #101828;
-  font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px;
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-.content-a {
-  color: var(--Gray-500, #667085);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-.material-icons {
-  border: 1px solid black;
-  border-radius: 20px;
-  user-select: none;
-  cursor: pointer;
-}
-.question-devider {
-  margin-block: 32px 22px;
-  background-color: #eaecf0;
-  border: 0px;
-  height: 1.5px;
-}
-</style>
