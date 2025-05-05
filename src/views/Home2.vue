@@ -2,9 +2,9 @@
   <div class="">
     <Header2></Header2>
     <div class="w-full h-auto font-[Roboto] p-2 flex flex-col gap-6">
-      <Facility2></Facility2>
-      <QandA2></QandA2>
-      <Review2></Review2>
+      <Facility2 id="facility"></Facility2>
+      <QandA2 id="fandq"></QandA2>
+      <Review2 id="review"></Review2>
       <footer2></footer2>
     </div>
   </div>
