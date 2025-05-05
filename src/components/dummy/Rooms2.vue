@@ -1,59 +1,32 @@
 <template>
-  <div class="c-level-one-container">
-    <div class="head-container">
-      <div class="container-title">Our room collection</div>
-      <div class="description component-description">
-        excellent relax with our collection
-      </div>
-    </div>
-    <div class="content-container">
-      <span class="arrow-key material-icons" @click="move('up')"
-        >arrow_back_ios</span
-      >
-      <div
-        class="room-card"
-        v-for="(item, item_index) in show"
-        :key="item_index"
-      >
-        <div class="image-container" :id="item.id">
-          <img :src="item.image" alt="room-image" class="room-image" />
-          <div class="image-mask"></div>
+  <div class="flex flex-col gap-6 md:p-10 p-4 w-full max-w-[1450px] min-w-[200px] mx-auto">
+    <h3 class="text-3xl font-black">Room Collection</h3>
+    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, ipsum nesciunt! Ut perferendis iste eveniet ipsa, doloribus similique quia odio.</p>
+    <div class="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+      <div class="flex flex-col gap-4 border-1 border-gray-400/50 p-3 rounded-lg hover:shadow-lg" v-for="item in roomList.slice(0, defaultLimit)">
+        <img :src="item.image" :alt="item.name" class="h-full xl:max-h-[200px] lg:max-h-[300px] max-h-[250px] min-h-[100px] object-cover w-full rounded-lg">
+        <div class="flex flex-row justify-between">
+          <p class="font-semibold text-lg">{{ item.name }}</p>
+          <!-- <p class="">Rs. {{ item.price }}.00</p> -->
+          <button class="border-2 border-gray-200 px-4 py-1 rounded-sm hover:bg-[#e7c873] hover:border-[#e7c873] cursor-pointer">Check Availability</button>
         </div>
-        <div class="room-description">
-          <p class="room-name">{{ item.name }}</p>
-          <p class="room-price">{{ item.price }}</p>
-        </div>
-        <div class="features-container">
-          <div
-            class="features"
-            v-for="(i, i_index) in show[item_index].featurs"
-            :key="i_index"
-          >
-            <span class="material-icons">{{ i.icon }}</span>
-            <p class="description feature-description">{{ i.name }}</p>
-            <vr class="vertical-rulle"></vr>
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-2">
+          <div class="flex flex-row gap-4 items-center hover:bg-[#f6f8fa] bg-[#dddfe1]/50 rounded-md p-1 cursor-default" v-for="i in item.featurs">
+            <i class="material-icons text">{{ i.icon }}</i>
+            <p class="sm:text-base text-sm">{{ i.name }}</p>
           </div>
         </div>
       </div>
-      <span class="arrow-key material-icons" @click="move('down')"
-        >arrow_forward_ios</span
-      >
     </div>
+    <button class="border px-16 py-2 w-fit mx-auto" @click="defaultLimit = 5, roomMoreButton = false" v-if="roomMoreButton">Show all</button>
   </div>
 </template>
-
 <script setup>
-import { onBeforeMount, ref } from "vue";
+import { ref } from 'vue';
 
-onBeforeMount(() => {
-  show.value = roomList.value.slice(0, 3);
-  //remove first three item in roomList
-  for (let i = 0; i < 3; i++) {
-    roomList.value.shift();
-  }
-});
+const defaultLimit = ref(3)
+const roomMoreButton = ref(true)
 
-const show = ref([]);
 
 const roomList = ref([
   {
@@ -117,129 +90,4 @@ const roomList = ref([
     ],
   },
 ]);
-
-const move = (side) => {
-  if (side == "down") {
-    roomList.value.push(show.value.shift());
-    show.value.push(roomList.value.shift());
-  } else if (side == "up") {
-    roomList.value.unshift(show.value.pop());
-    show.value.unshift(roomList.value.pop());
-  }
-};
 </script>
-
-<style scoped>
-.c-level-one-container {
-  margin-block: 50px;
-}
-.container-title {
-  color: #1a1a1a;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 41.065px; /* 130% */
-  user-select: none;
-  margin-bottom: 10px;
-}
-.description {
-  color: #1a1a1a;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 25.508px; /* 190% */
-}
-.component-description {
-  margin-bottom: 24px;
-}
-.content-container {
-  width: 80%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-inline: auto;
-  gap: 24px;
-}
-.room-card {
-  user-select: none;
-  width: 353.004px;
-  height: 357.742px;
-  flex-shrink: 0;
-  border-radius: 12.635px;
-  border: 0.79px solid #e9e9e9;
-  background: #fff;
-}
-.room-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-.image-container,
-.room-image {
-  width: 335.63px;
-  height: 234.151px;
-  flex-shrink: 0;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-inline: auto;
-  margin-top: 5px;
-}
-.room-name {
-  color: #1a1a1a;
-  font-family: Roboto;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-}
-.room-card:hover .room-name {
-  font-weight: 800;
-}
-.room-price {
-  color: #eb664e;
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 600;
-}
-.room-card:hover .room-price {
-  font-weight: 900;
-}
-.features {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-  align-items: center;
-  width: 160px;
-}
-.room-description {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 92%;
-  margin-inline: auto;
-  margin-top: 20px;
-}
-.feature-description {
-  margin-left: 12px;
-}
-.features-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 92%;
-  margin-inline: auto;
-  margin-top: 10px;
-}
-.arrow-key {
-  border: 1px solid #e9e9e9;
-  padding: 5px;
-  border-radius: 20px;
-}
-.arrow-key:hover {
-  background-color: #e9e9e9;
-}
-</style>

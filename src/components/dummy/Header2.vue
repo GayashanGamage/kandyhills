@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-center items-center w-full h-auto relative">
-    <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/header_image.jpg" alt="hotel image" class="w-full object-cover h-full max-h-[1000px] min-h-[500px] z-1">
+    <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/header_image.jpg" alt="hotel image" class="w-full object-cover md:h-full h-screen max-h-[1000px] min-h-[500px]  z-1">
     <div class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-black/50  to-transparent z-2"></div>
     <!-- text content -->
     <div class="flex flex-col justify-center items-center gap-3 w-[50%] h-auto absolute z-3 text-white">
