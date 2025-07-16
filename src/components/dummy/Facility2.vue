@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl p-10 gap-10 bg-[#e7c873]">
+  <div class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl p-10 gap-10 bg-[#f6f8fa]">
     <div class="flex flex-col gap-4">
       <h3 class="font-black text-3xl">Get better experience with us</h3>
       <p class="font-light text-lg">

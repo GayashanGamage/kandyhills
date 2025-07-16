@@ -3,18 +3,20 @@
     <h3 class="text-3xl font-black">Room Collection</h3>
     <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, ipsum nesciunt! Ut perferendis iste eveniet ipsa, doloribus similique quia odio.</p>
     <div class="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-      <div class="flex flex-col gap-4 border-1 border-gray-400/50 p-3 rounded-lg hover:shadow-lg" v-for="item in roomList.slice(0, defaultLimit)">
+      <div class="flex flex-col gap-4 border-1 border-gray-400/50 p-4 rounded-lg shadow-lg" v-for="item in roomList.slice(0, defaultLimit)">
         <img :src="item.image" :alt="item.name" class="h-full xl:max-h-[200px] lg:max-h-[300px] max-h-[250px] min-h-[100px] object-cover w-full rounded-lg">
-        <div class="flex flex-row justify-between">
-          <p class="font-semibold text-lg">{{ item.name }}</p>
-          <!-- <p class="">Rs. {{ item.price }}.00</p> -->
-          <button class="border-2 border-gray-200 px-4 py-1 rounded-sm hover:bg-[#e7c873] hover:border-[#e7c873] cursor-pointer">Check Availability</button>
-        </div>
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-2">
-          <div class="flex flex-row gap-4 items-center hover:bg-[#f6f8fa] bg-[#dddfe1]/50 rounded-md p-1 cursor-default" v-for="i in item.featurs">
-            <i class="material-icons text">{{ i.icon }}</i>
+        <p class="font-semibold text-lg">{{ item.name }}</p>
+        <hr class="text-gray-400/50">
+        <div class="flex flex-row flex-wrap gap-2">
+          <div class="flex flex-row gap-4 items-center border rounded-sm px-3 py-1 cursor-default" v-for="i in item.featurs">
             <p class="sm:text-base text-sm">{{ i.name }}</p>
           </div>
+        </div>
+        <div class="flex flex-row justify-between">
+          <p class="text-xl font-semibold">Rs. {{ item.price }}.00 <span class="font-light text-sm">Per Night</span></p>
+          <router-link to="room">
+            <button class="border-2 border-gray-200 px-4 py-1 rounded-sm hover:bg-[#e7c873] hover:border-[#e7c873] cursor-pointer">View</button>
+          </router-link>
         </div>
       </div>
     </div>
