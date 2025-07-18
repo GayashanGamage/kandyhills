@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center w-full h-auto relative">
+  <div class="flex flex-col justify-center w-full h-auto relative mb-6">
     <Menubar2></Menubar2>
     <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/kandyhill.jpg" alt="hotel image"
       class="w-full object-cover h-screen max-h-[1000px] min-h-[500px]  z-1">

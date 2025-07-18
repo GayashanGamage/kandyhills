@@ -1,178 +1,73 @@
 <template>
-  <div class="c-level-one-container">
-    <div class="container-head">
-      <h3 class="ch-head">Get relax with our location</h3>
-      <p class="ch-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nisi.
+  <div class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl px-10 py-18 gap-10 bg-[#f6f8fa]">
+    <div class="flex flex-col gap-4">
+      <h3 class="font-black text-3xl">How we looks like</h3>
+      <p class="font-light text-lg">
+        Experience these exceptional services with us and make your stay truly
+        unforgettable !
       </p>
     </div>
-    <div id="content">
-      <div class="c-image-box">
-        <img
-          src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery8.jpg"
-          alt="gallery-1"
-          class="c-image c-image-2"
-        />
-        <button class="action-button">MORE</button>
-      </div>
-      <div class="c-image-box">
-        <img
-          src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery2.jpg"
-          alt="gallery-2"
-          class="c-image"
-        />
-        <button class="action-button">MORE</button>
-      </div>
-      <div class="c-image-box">
-        <img
-          src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery6.jpg"
-          alt="gallery-3"
-          class="c-image"
-        />
-        <button class="action-button">MORE</button>
-      </div>
-      <div class="c-image-box">
-        <img
-          src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery3.jpg"
-          alt="gallery-4"
-          class="c-image"
-        />
-        <button class="action-button">MORE</button>
-      </div>
-      <div class="c-image-box">
-        <img
-          src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery1.jpg"
-          alt="gallery-5"
-          class="c-image"
-        />
-        <button class="action-button">MORE</button>
-      </div>
-      <div class="c-image-box">
-        <img
-          src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery5.jpg"
-          alt="gallery-6"
-          class="c-image c-image-2"
-        />
-        <button class="action-button">MORE</button>
+    <div class="grid grid-cols-4 gap-4">
+      <div class="relative" :class="{ 'col-span-2': index == 0 || index == 5 }" v-for="item, index in gallery">
+        <img class="rounded-lg max-h-[300px] w-full min-h-[200px] h-full object-cover" :key="item.name"
+          :src="item.url" />
+        <div
+          class="flex flex-col justify-center items-center absolute top-0 left-0 right-0 bottom-0 hover:bg-black/50 rounded-lg"
+          @mouseenter="iconShow(index)" @mouseleave="iconHide(index)" @click="router.push({ name: 'gallery' })">
+          <!-- <SearchX class="text-white hidden" :id="`searchIcon${index}`"></SearchX> -->
+          <button class="text-white hidden border py-1 px-6 rounded-sm" :id="`searchIcon${index}`">MORE</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import router from '@/router';
+import { icons, SearchX } from 'lucide-vue-next';
+import { ref } from 'vue';
 
-<style scoped>
-/* grid structure for destop and tablets
-    flex structure for mobile device*/
-.c-level-one-container {
-  height: auto;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-block: 100px;
-}
-.ch-head {
-  color: #1a1a1a;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 34px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-.ch-description {
-  color: #1a1a1a;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
-#content {
-  height: auto;
-  width: 84%;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-.c-image-box {
-  width: 270px;
-  height: 336px;
-  border-radius: 6px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.c-image-box::after {
-  content: " ";
-  border-radius: 6px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 270px;
-  height: 336px;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.8) 0%,
-    rgba(26, 26, 26, 0.1) 60%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-.c-image-box:first-child,
-.c-image-box:last-child {
-  width: 566px;
-}
-.c-image-box:first-child::after,
-.c-image-box:last-child::after {
-  content: " ";
-  border-radius: 6px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 566px;
-  height: 336px;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.8) 0%,
-    rgba(26, 26, 26, 0.1) 60%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-.c-image {
-  width: 270px;
-  height: 336px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-.c-image-2 {
-  width: 566px;
-  object-fit: cover;
+const iconShow = (index) => {
+  const icon = document.querySelector(`#searchIcon${index}`);
+  icon.classList.replace('hidden', 'block');
 }
 
-.action-button {
-  position: absolute;
-  z-index: 10;
-  width: 100px;
-  height: 30px;
-  display: none;
-  cursor: pointer;
-  background-color: #eed99d;
-  border: 0px;
-  border-radius: 4px;
-  font-size: 16px;
+const iconHide = (index) => {
+  const icon = document.querySelector(`#searchIcon${index}`);
+  icon.classList.replace('block', 'hidden');
 }
-.action-button:hover {
-  background-color: rgb(231, 200, 115);
-}
-.c-image-box:hover::after {
-  background-color: rgba(26, 26, 26, 0.6);
-}
-.c-image-box:hover > .action-button {
-  display: block;
-}
-</style>
+
+const gallery = ref([
+  {
+    name: 'gallery1',
+    url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery8.jpg',
+    category: 'rooms'
+  },
+  {
+    name: 'gallery1',
+    url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery2.jpg',
+    category: 'rooms'
+  },
+  {
+    name: 'gallery1',
+    url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery6.jpg',
+    category: 'rooms'
+  },
+  {
+    name: 'gallery1',
+    url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery3.jpg',
+    category: 'rooms'
+  },
+  {
+    name: 'gallery1',
+    url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery1.jpg',
+    category: 'rooms'
+  },
+  {
+    name: 'gallery1',
+    url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/gallery/gallery5.jpg',
+    category: 'rooms'
+  },
+])
+
+</script>
