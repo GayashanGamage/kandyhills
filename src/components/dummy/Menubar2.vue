@@ -2,9 +2,8 @@
   <div
     class="flex flex-row w-full h-auto absolute top-0 left-0 right-0 z-10 text-white p-10 lg:text-lg md:text-base font-medium cursor-default">
     <ul class="md:flex md:flex-row md:items-center lg:gap-20 md:gap-10 ml-auto hidden">
-      <li class="hover:underline"><router-link to="/test">test pag </router-link></li>
       <li class="hover:underline"><router-link to="/">Home</router-link></li>
-      <li class="hover:underline"><a href="#facility" v-smooth-scroll>Facility</a></li>
+      <!-- <li class="hover:underline"><a href="#facility" v-smooth-scroll>Facility</a></li> -->
       <li class="hover:underline"><a href="#gallery" class="" v-smooth-scroll>Gallery</a></li>
       <li class="hover:underline"><a href="#accomadation" class="" v-smooth-scroll>Accomodation</a></li>
       <li class="hover:underline"><a href="#fandq" v-smooth-scroll>F&Q</a></li>

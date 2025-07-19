@@ -10,7 +10,7 @@ import Roompage from "@/views/Roompage.vue";
 // import Test3 from "@/views/test3.vue";
 // import Test4 from "@/views/test4.vue";
 // import Test5 from "@/views/test5.vue";
-// import Test6 from "@/views/test6.vue";
+import Test6 from "@/views/test6.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -76,11 +76,11 @@ const router = createRouter({
     //   name: "test5",
     //   component: Test5,
     // },
-    // {
-    //   path: "/test6",
-    //   name: "test6",
-    //   component: Test6,
-    // },
+    {
+      path: "/test6",
+      name: "test6",
+      component: Test6,
+    },
   ],
 });
 

@@ -9,7 +9,6 @@
                 <li class="hover:underline"><router-link to="/accomodation">Accomodation</router-link></li>
                 <li class="hover:underline"><router-link to="/faq">F&Q</router-link></li>
                 <li class="hover:underline"><router-link to="/reviews">Reviews</router-link></li>
-                <li class="hover:underline"><router-link to="/gallery">Placess</router-link></li>
                 <button class="flex flex-row justify-center center items-center border py-2 px-6 rounded-sm bg-white"><i
                         class="fi fi-sr-circle-phone pr-4 text-black"></i><span class="text-black">071 899 12
                         34</span></button>
