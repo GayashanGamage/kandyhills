@@ -82,6 +82,9 @@ const router = createRouter({
       component: Test6,
     },
   ],
-});
+  scrollBehavior(to, from, savedPosition) {
+    return {top : 0};
+  }
+  });
 
 export default router;

@@ -11,9 +11,10 @@ export const hotelStore = defineStore("hotel  ", () => {
       name: "Single Room",
       price: 25000,
       featurs: [
-        { icon: "hot_tub", name: "Hot water shower" },
-        { icon: "pool", name: "pool access" },
-        { icon: "bed", name: "king size bed" },
+        { icon: "fi fi-tr-hot-tub", name: "Hot water shower" },
+        { icon: "fi fi-sr-swimmer", name: "pool access" },
+        { icon: "fi fi-tr-bed-alt", name: "king size bed" },
+        { icon: "fi fi-tr-toilet-paper-blank", name: "king size bed" },
       ],
     },
     {
@@ -23,33 +24,33 @@ export const hotelStore = defineStore("hotel  ", () => {
       name: "Dubble Room",
       price: 35000,
       featurs: [
-        { icon: "hot_tub", name: "Hot water shower" },
-        { icon: "pool", name: "pool access" },
-        { icon: "bed", name: "king size bed" },
+        { icon: "fi fi-tr-hot-tub", name: "Hot water shower" },
+        { icon: "fi fi-sr-swimmer", name: "pool access" },
+        { icon: "fi fi-tr-bed-alt", name: "king size bed" },
       ],
     },
-    {
+    { 
       id: 2,
       image:
-        "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_3/room3.jpg",
+      "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_3/room3.jpg",
       name: "Dualux Room",
       price: 45000,
       featurs: [
-        { icon: "hot_tub", name: "Hot water shower" },
-        { icon: "pool", name: "pool access" },
-        { icon: "bed", name: "king size bed" },
+        { icon: "fi fi-tr-hot-tub", name: "Hot water shower" },
+        { icon: "fi fi-sr-swimmer", name: "pool access" },
+        { icon: "fi fi-tr-bed-alt", name: "king size bed" },
       ],
     },
     {
       id: 3,
       image:
-        "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_4/room4.jpg",
+      "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_4/room4.jpg",
       name: "Hanymon Room",
       price: 75000,
       featurs: [
-        { icon: "hot_tub", name: "Hot water shower" },
-        { icon: "pool", name: "pool access" },
-        { icon: "bed", name: "king size bed" },
+        { icon: "fi fi-tr-hot-tub", name: "Hot water shower" },
+        { icon: "fi fi-sr-swimmer", name: "pool access" },
+        { icon: "fi fi-tr-bed-alt", name: "king size bed" },
       ],
     },
     {
@@ -59,13 +60,12 @@ export const hotelStore = defineStore("hotel  ", () => {
       name: "luxeryX Room",
       price: 95000,
       featurs: [
-        { icon: "hot_tub", name: "Hot water shower" },
-        { icon: "pool", name: "pool access" },
-        { icon: "bed", name: "king size bed" },
+        { icon: "fi fi-tr-hot-tub", name: "Hot water shower" },
+        { icon: "fi fi-sr-swimmer", name: "pool access" },
+        { icon: "fi fi-tr-bed-alt", name: "king size bed" },
       ],
     },
   ]);
-
   const questions = ref([
     // ACCOMMODATION (4 questions)
     {
@@ -115,22 +115,22 @@ export const hotelStore = defineStore("hotel  ", () => {
     {
       question: "What is your smoking policy?",
       answare: "We are 100% smoke-free. Smoking is only permitted in designated outdoor areas.",
-      tag: 'general home / hotel rules'
+      tag: 'hotel rules'
     },
     {
       question: "Are pets allowed in the hotel?",
       answare: "Only service animals are permitted with proper documentation.",
-      tag: 'general home / hotel rules'
+      tag: 'hotel rules'
     },
     {
       question: "Is there a minimum age requirement for check-in?",
       answare: "Guests must be at least 21 years old to check in without adult supervision.",
-      tag: 'general home / hotel rules'
+      tag: 'hotel rules'
     },
     {
       question: "What is your cancellation policy?",
       answare: "Cancellations must be made 48 hours prior to arrival to avoid a one-night charge.",
-      tag: 'general home / hotel rules'
+      tag: 'hotel rules'
     },
 
     // ONBOARD (4 questions)
