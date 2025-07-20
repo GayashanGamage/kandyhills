@@ -34,7 +34,8 @@
                                 item.description.slice(0, 80) }}</p>
                         </div>
                         <button class="border rounded-sm bg-white/30 h-fit w-fit py-1 px-4"
-                            :class="{ 'hidden': index != hoverItem, 'block': index == hoverItem }">More</button>
+                            :class="{ 'hidden': index != hoverItem, 'block': index == hoverItem }"
+                            @click="router.push({ name: 'blog', hash: `#${item.hash}` })">More</button>
                     </div>
                 </div>
             </div>

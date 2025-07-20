@@ -8,6 +8,7 @@
       <li class="hover:underline"><a href="#accomadation" class="" v-smooth-scroll>Accomodation</a></li>
       <li class="hover:underline"><a href="#fandq" v-smooth-scroll>F&Q</a></li>
       <li class="hover:underline"><a href="#review" v-smooth-scroll>Review</a></li>
+      <li class="hover:underline"><a href="#blog" v-smooth-scroll>Blog</a></li>
       <button class="flex flex-row justify-center center items-center border py-2 px-6 rounded-sm bg-white"><i
           class="fi fi-sr-circle-phone pr-4 text-black"></i><span class="text-black">071 899 12
           34</span></button>

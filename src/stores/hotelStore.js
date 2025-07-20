@@ -395,21 +395,25 @@ export const hotelStore = defineStore("hotel  ", () => {
   const placesToVisit = ref([
     {
         name: 'Royal Botanical Gardens, Peradeniya',
+        hash : 'garden',
         image: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/placeToVisite/placetovisit(4).webp',
         description: 'The Royal Botanical Gardens in Peradeniya is one of the finest botanical gardens in Asia, spanning 147 acres. Located just 5.5 km from Kandy, this garden was established in 1843 and features more than 4,000 species of plants. The highlight is the giant Java fig tree with its sprawling roots, which has become an iconic photo spot. The orchid house displays hundreds of colorful orchid varieties, while the palm avenue creates a majestic canopy. Visitors can see exotic plants like the cannonball tree, giant bamboo, and numerous medicinal plants. The gardens also have a spice garden showcasing Sri Lanka\'s famous spices. With its well-manicured lawns, scenic river views (it\'s bordered by the Mahaweli River), and tranquil atmosphere, this makes for a perfect half-day excursion from Kandy. The cool climate and beautiful landscapes make it ideal for nature lovers and photographers alike.'
-    },
-    {
+      },
+      {
         name: 'Temple of the Sacred Tooth Relic',
+        hash : 'temple',
         image: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/placeToVisite/placetovisit(3).webp',
         description: 'The Temple of the Sacred Tooth Relic (Sri Dalada Maligawa) is the most sacred Buddhist site in Sri Lanka and a UNESCO World Heritage Site. Located in the heart of Kandy, it houses the relic of Buddha\'s tooth, which has played a significant role in Sri Lankan politics and culture for centuries. The temple complex features stunning Kandyan architecture with intricate carvings, golden roofs, and a moat. Daily rituals (pujas) occur at 5:30 AM, 9:30 AM, and 6:30 PM with drumming and chanting. The annual Esala Perahera festival (July/August) features a grand procession with elephants and dancers. Visitors must dress modestly (shoulders and knees covered) and can explore the museum, audience hall, and octagonal Pattirippuwa. The temple offers profound cultural insights and spiritual ambiance, making it Kandy\'s must-visit attraction.'
-    },
-    {
+      },
+      {
         name: 'Udawatta Kele Sanctuary',
+        hash : 'udawatta',
         image: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/placeToVisite/placetovisit(2).webp',
         description: 'Udawatta Kele (Royal Forest Park) is a 257-acre forest reserve located just behind the Temple of the Tooth in Kandy. This lush green sanctuary offers excellent hiking opportunities through well-marked trails amidst diverse flora and fauna. The forest contains over 400 plant species (including many endemic ones), 80 bird species (like the Layard\'s parakeet and Sri Lanka hanging parrot), and mammals such as monkeys and giant squirrels. Historical sites within include the Senkada Cave (used by Buddhist monks) and the Garrison Cemetery from British colonial times. The peaceful atmosphere with singing birds and rustling leaves provides a perfect nature escape within city limits. Early morning visits are ideal for birdwatching. The canopy walkway offers beautiful views, and the forest maintains a cool temperature even during midday. It\'s an excellent spot for those seeking tranquility and nature immersion without leaving Kandy.'
-    },
-    {
+      },
+      {
         name: 'Lankatilaka Vihara',
+        hash : 'lankatilaka',
         image: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/placeToVisite/placetovisit(1).webp',
         description: 'Lankatilaka Vihara is an impressive 14th-century Buddhist temple located in Hiyarapitiya, about 15 km from Kandy. Built on a natural rock outcrop, this architectural masterpiece combines Sinhalese, Dravidian, and Indo-Chinese styles. The temple features a massive 80-foot-high brick structure with intricate carvings and a golden roof. Inside houses a 12-meter tall Buddha statue under a magnificent Makara Thorana (dragon arch), with beautiful Kandyan-era frescoes adorning the walls. The temple offers panoramic views of the surrounding countryside. Nearby is the historic Gadaladeniya Temple and Embekka Devalaya, forming a cultural triangle. The peaceful atmosphere and spiritual significance make it worthwhile despite the short journey from Kandy. Visitors should climb the rock-cut staircase to appreciate the temple\'s grandeur fully. The site provides excellent examples of medieval Sri Lankan art and architecture while maintaining active religious functions.'
     }
