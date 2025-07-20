@@ -1,4 +1,5 @@
 // import Home from "@/views/Home.vue";
+import Blog from "@/components/dummy/Blog.vue";
 import Acoomodation from "@/views/Acoomodation.vue";
 import FaQ from "@/views/FaQ.vue";
 import Gallery from "@/views/Gallery.vue";
@@ -46,6 +47,11 @@ const router = createRouter({
       path: "/room",
       name: "room",
       component: Roompage,
+    },
+    {
+      path: "/blog",
+      name: "blog",
+      component: Blog,
     },
     // {
     //   path: "/home",

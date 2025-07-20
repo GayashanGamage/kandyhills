@@ -9,7 +9,7 @@
                 class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl px-10 py-18 gap-10 bg-[#f6f8fa]">
                 <div class="flex flex-row gap-6 whitespace-nowrap">
                     <div class="flex flex-col gap-6 w-[33%]" v-for="item in rows">
-                        <img :src="i.url" class="rounded-lg"
+                        <img :src="i.url" class="rounded-lg object-cover"
                             v-for="i, index in hotelstore.gallery.slice((hotelstore.gallery.length / rows) * (item - 1), (hotelstore.gallery.length / rows * item) - 1)"
                             :class="{ ' odd:h-[200px]  even:h-[400px]': item % 2 === 1, ' odd:h-[400px] even:h-[200px]': item % 2 === 0 }">
                         {{ i }}</img>
