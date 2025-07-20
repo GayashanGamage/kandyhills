@@ -118,6 +118,10 @@ const review = ref([
     name: "Christian Joe",
     review:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est alias repellendus impedit tenetur officia doloribus nam ad nulla quis fuga!",
+    platform: {
+      name: "Booking.com",
+      url: "https://www.booking.com/hotel/lk/kandy-hills.html",
+    }
   },
   {
     image:

@@ -299,5 +299,158 @@ export const hotelStore = defineStore("hotel  ", () => {
       },
   ])
 
-  return {roomList, questions, gallery};
+  const review = ref([
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇩🇪",
+      name: "Christian Joe",
+      review: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est alias repellendus impedit tenetur officia doloribus nam ad nulla quis fuga!",
+      platform: {
+        name: "Booking.com",
+        url: "https://www.booking.com/hotel/lk/kandy-hills.html",
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇺🇸",
+      name: "Sarah Johnson",
+      review: "Absolutely stunning location with breathtaking views. The staff went above and beyond to make our stay memorable. Will definitely return for another visit soon!",
+      platform: {
+        name: "Agoda.com",
+        url: "https://www.agoda.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇬🇧",
+      name: "David Wilson",
+      review: "The perfect getaway spot with excellent amenities. The rooms were spacious, clean, and had everything we needed for a comfortable stay. Highly recommended!",
+      platform: {
+        name: "Airbnb.com",
+        url: "https://www.airbnb.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇫🇷",
+      name: "Marie Dupont",
+      review: "Exceptional service from start to finish. The attention to detail was impressive, and the food was delicious. We felt truly pampered during our entire stay.",
+      platform: {
+        name: "Booking.com",
+        url: "https://www.booking.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇯🇵",
+      name: "Takashi Yamamoto",
+      review: "A peaceful oasis with modern comforts. The bed was incredibly comfortable, and we slept soundly every night. The sunset views were absolutely magical!",
+      platform: {
+        name: "Agoda.com",
+        url: "https://www.agoda.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇦🇺",
+      name: "Emma Thompson",
+      review: "Five-star experience all around! The location was perfect for exploring the area, and returning to such comfortable accommodations each evening was a treat.",
+      platform: {
+        name: "Airbnb.com",
+        url: "https://www.airbnb.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇨🇦",
+      name: "Michael Brown",
+      review: "The perfect blend of luxury and homely comfort. Every staff member we encountered was friendly and helpful. The pool area was particularly fantastic!",
+      platform: {
+        name: "Booking.com",
+        url: "https://www.booking.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇮🇹",
+      name: "Giovanni Rossi",
+      review: "We couldn't have asked for a better vacation spot. The design of the property is beautiful, and the attention to cleanliness was much appreciated.",
+      platform: {
+        name: "Agoda.com",
+        url: "https://www.agoda.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇪🇸",
+      name: "Isabella Garcia",
+      review: "A truly memorable experience from check-in to check-out. The breakfast was delicious with many local options. We'll be telling all our friends about this gem!",
+      platform: {
+        name: "Airbnb.com",
+        url: "https://www.airbnb.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇳🇱",
+      name: "Lucas van Dijk",
+      review: "Exceeded all our expectations! The room was spacious with a beautiful view, and the staff arranged wonderful excursions for us. Perfect in every way!",
+      platform: {
+        name: "Booking.com",
+        url: "https://www.booking.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇸🇪",
+      name: "Elin Andersson",
+      review: "The perfect romantic getaway. Beautiful decor, amazing service, and such thoughtful touches throughout our stay. We can't wait to come back for our anniversary!",
+      platform: {
+        name: "Agoda.com",
+        url: "https://www.agoda.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇸🇬",
+      name: "Wei Chen",
+      review: "Exceptional value for money. The facilities were top-notch, and the location couldn't be better. Special thanks to the concierge for their excellent recommendations!",
+      platform: {
+        name: "Airbnb.com",
+        url: "https://www.airbnb.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇳🇿",
+      name: "Olivia Taylor",
+      review: "A home away from home but with luxury amenities. The kids loved the pool, and we appreciated the quiet evenings on our private balcony. Perfect family vacation!",
+      platform: {
+        name: "Booking.com",
+        url: "https://www.booking.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇰🇷",
+      name: "Min-ji Park",
+      review: "Impeccable cleanliness and stunning design throughout the property. The spa services were wonderful, and the staff made us feel like VIPs. Highly recommend!",
+      platform: {
+        name: "Agoda.com",
+        url: "https://www.agoda.com"
+      }
+    },
+    {
+      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
+      from: "🇧🇷",
+      name: "Rafael Silva",
+      review: "The perfect combination of adventure and relaxation. Great activities available nearby, then returning to such comfortable and stylish accommodations each night.",
+      platform: {
+        name: "Airbnb.com",
+        url: "https://www.airbnb.com"
+      }
+    }
+  ])
+
+  return {roomList, questions, gallery, review};
 });
