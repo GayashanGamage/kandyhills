@@ -11,6 +11,7 @@ import Roompage from "@/views/Roompage.vue";
 // import Test4 from "@/views/test4.vue";
 // import Test5 from "@/views/test5.vue";
 import Test6 from "@/views/test6.vue";
+
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({

@@ -1,10 +1,21 @@
 <template>
-    <div class="">
+    <div class="flex flex-col gap-18">
         <SubPageHead pagetitle="Gallery"
             pagedescription='Lorem, ipsum dolor sit amet consectetur adipisicing elit.Ab minus rem architecto eius dolore, facere voluptatibus dignissimos quidem cupiditate quas'>
         </SubPageHead>
         <div class="w-full h-auto font-[Roboto] p-2 flex flex-col gap-16">
-            <p class="">this is for gallery of property</p>
+            <!-- content -->
+            <div
+                class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl px-10 py-18 gap-10 bg-[#f6f8fa]">
+                <div class="flex flex-row gap-6 whitespace-nowrap">
+                    <div class="flex flex-col gap-6 w-[33%]" v-for="item in rows">
+                        <img :src="i.url" class="rounded-lg"
+                            v-for="i, index in hotelstore.gallery.slice((hotelstore.gallery.length / rows) * (item - 1), (hotelstore.gallery.length / rows * item) - 1)"
+                            :class="{ ' odd:h-[200px]  even:h-[400px]': item % 2 === 1, ' odd:h-[400px] even:h-[200px]': item % 2 === 0 }">
+                        {{ i }}</img>
+                    </div>
+                </div>
+            </div>
             <Searchaccomodation></Searchaccomodation>
             <Footer2></Footer2>
         </div>
@@ -15,4 +26,10 @@ import Footer2 from '@/components/dummy/Footer2.vue';
 // import Menubar2 from '@/components/dummy/Menubar2.vue';
 import Searchaccomodation from '@/components/dummy/Searchaccomodation.vue';
 import SubPageHead from '@/components/dummy/SubPageHead.vue';
+import { hotelStore } from '@/stores/hotelStore';
+import { ref } from 'vue';
+
+const hotelstore = hotelStore()
+
+const rows = ref(3);
 </script>

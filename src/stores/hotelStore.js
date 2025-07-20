@@ -267,11 +267,11 @@ export const hotelStore = defineStore("hotel  ", () => {
           url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/kandyHills/food/246900339.jpg',
           category: 'food'
       },
-      {
-          name: 'food image 5',
-          url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/kandyHills/food/246900433.jpg',
-          category: 'food'
-      },
+      // {
+      //     name: 'food image 5',
+      //     url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/kandyHills/food/246900433.jpg',
+      //     category: 'food'
+      // },
       {
           name: 'food image 6',
           url: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/kandyHills/food/246900726.jpg',
@@ -390,66 +390,6 @@ export const hotelStore = defineStore("hotel  ", () => {
         url: "https://www.airbnb.com"
       }
     },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇳🇱",
-      name: "Lucas van Dijk",
-      review: "Exceeded all our expectations! The room was spacious with a beautiful view, and the staff arranged wonderful excursions for us. Perfect in every way!",
-      platform: {
-        name: "Booking.com",
-        url: "https://www.booking.com"
-      }
-    },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇸🇪",
-      name: "Elin Andersson",
-      review: "The perfect romantic getaway. Beautiful decor, amazing service, and such thoughtful touches throughout our stay. We can't wait to come back for our anniversary!",
-      platform: {
-        name: "Agoda.com",
-        url: "https://www.agoda.com"
-      }
-    },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇸🇬",
-      name: "Wei Chen",
-      review: "Exceptional value for money. The facilities were top-notch, and the location couldn't be better. Special thanks to the concierge for their excellent recommendations!",
-      platform: {
-        name: "Airbnb.com",
-        url: "https://www.airbnb.com"
-      }
-    },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇳🇿",
-      name: "Olivia Taylor",
-      review: "A home away from home but with luxury amenities. The kids loved the pool, and we appreciated the quiet evenings on our private balcony. Perfect family vacation!",
-      platform: {
-        name: "Booking.com",
-        url: "https://www.booking.com"
-      }
-    },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇰🇷",
-      name: "Min-ji Park",
-      review: "Impeccable cleanliness and stunning design throughout the property. The spa services were wonderful, and the staff made us feel like VIPs. Highly recommend!",
-      platform: {
-        name: "Agoda.com",
-        url: "https://www.agoda.com"
-      }
-    },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇧🇷",
-      name: "Rafael Silva",
-      review: "The perfect combination of adventure and relaxation. Great activities available nearby, then returning to such comfortable and stylish accommodations each night.",
-      platform: {
-        name: "Airbnb.com",
-        url: "https://www.airbnb.com"
-      }
-    }
   ])
 
   return {roomList, questions, gallery, review};

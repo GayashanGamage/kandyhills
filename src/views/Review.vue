@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="flex flex-col gap-16">
         <SubPageHead pagetitle="Guest Reviews"
             pagedescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odit veniam a nesciunt aliquam, iste voluptate repellendus veritatis minima quos.">
         </SubPageHead>
