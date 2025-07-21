@@ -1,23 +1,23 @@
 <template>
   <div
-    class="flex flex-col gap-6 px-10 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
-    <div class="flex flex-col gap-4">
-      <div class="flex flex-row justify-between">
+    class="flex flex-col gap-6 md:px-10 px-2 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
+    <div class="flex md:flex-row md:justify-between flex-col gap-4">
+      <div class="flex flex-col justify-between">
         <h3 class="font-black text-3xl">Frequently asked questions</h3>
-        <button
-          class="px-10 py-2 w-fit flex flex-row gap-6 justify-center items-center rounded-sm bg-black hover:bg-black/80 active:bg-black/70 text-white"
-          @click="router.push({ name: 'faq' })">
-          <p class="">All Questions</p>
-          <ArrowRight size="18"></ArrowRight>
-        </button>
+        <p class="text-lg font-light">
+          Everything you need to know about the product and billing.
+        </p>
       </div>
-      <p class="text-lg font-light">
-        Everything you need to know about the product and billing.
-      </p>
+      <button
+        class="flex flex-row justify-center items-center gap-4 bg-black rounded-sm text-white text-sm py-1 px-6 w-fit h-fit"
+        @click="router.push({ name: 'faq' })">
+        <p class="">All Questions</p>
+        <ArrowRight size="18"></ArrowRight>
+      </button>
     </div>
 
     <!-- questions left side -->
-    <div class="lg:grid lg:grid-cols-2 flex flex-col sm:p-3 p-0 gap-14">
+    <div class="lg:grid lg:grid-cols-2 flex flex-col sm:p-3 p-0 md:gap-14 gap-6">
       <div class="flex flex-col gap-6">
         <!-- single F&Q section -->
         <div class="flex flex-col gap-4 cursor-pointer select-none"

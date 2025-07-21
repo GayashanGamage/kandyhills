@@ -1,12 +1,13 @@
 <template>
   <div
-    class="flex flex-col gap-6 px-10 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
+    class="flex flex-col gap-6 md:px-10 p-2 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
     <div class="flex flex-col gap-5">
 
       <!-- review section title -->
-      <div class="flex flex-row justify-between items-center w-full">
-        <h3 class="font-black text-3xl">What our guests are saying about us ?</h3>
-        <button class="flex flex-row gap-4 bg-black rounded-sm text-white py-1 px-6"
+      <div class="flex lg:flex-row flex-col lg:justify-between lg:items-center w-full gap-6">
+        <h3 class="font-black text-3xl">Guest satisfaction</h3>
+        <button
+          class="flex flex-row justify-center items-center gap-4 bg-black rounded-sm text-white text-sm py-1 px-6 w-fit"
           @click="router.push({ name: 'review' })">
           <span class="">All reviews</span>
           <MoveRight></MoveRight>
@@ -14,7 +15,7 @@
       </div>
 
       <!-- review section body -->
-      <div class="grid grid-cols-2 gap-2 p-4">
+      <div class="grid lg:grid-cols-2 grid-cols-1 md:gap-5 gap-12">
 
         <!-- booking site refference -->
         <div class="flex flex-col gap-4">
@@ -23,38 +24,40 @@
             views to exceptional service, here is a glimpse of what our guests
             love about the stay
           </p>
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid grid-cols-3 gap-2">
 
             <!-- ratings for each platforms -->
             <div class="flex flex-col gap-2 justify-end items-center" v-for="item in platformsRatings">
-              <img :src="item.platform" alt="" class="w-30 h-auto object-cover rounded-md">
+              <img :src="item.platform" alt="" class="sm:w-30 w-20 h-auto object-cover rounded-md">
               <div
-                class="flex flex-col gap-2 jusitfy-center items-center bg-black/80 py-2 px-4 rounded-md max-w-[200px] min-w-[150px] w-full text-white">
-                <div class="flex flex-row gap-1">
+                class="flex flex-col gap-2 jusitfy-center items-center bg-black/80 py-2 px-4 rounded-md max-w-[200px] min-w-[80px] w-full text-white">
+                <div class="sm:flex sm:flex-row gap-1 hidden">
                   <Star :class="{ 'text-yellow-300': index < item.rating }" v-for="i, index in item.score" size="12">
                   </Star>
                 </div>
                 <p><span class="font-black text-2xl">{{ item.rating }}</span>/<span class="font-thin text-sm">{{
                   item.score
-                }}</span></p>
+                    }}</span></p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- client review section -->
-        <div class="border-l border-l-black">
-          <div class="flex flex-col gap-2 items-center">
+        <div class="lg:border-l lg:border-l-black ">
+          <div class="flex flex-col gap-2 items-center p-4">
             <!-- view port -->
             <div class="flex flex-row  w-full h-auto rounded-sm overflow-hidden">
               <!-- single element -->
-              <div class="flex flex-row transition-transform duration-500"
+              <div
+                class="flex flex-row transition-transform duration-500 border border-gray-200 bg-white shadow-sm rounded-sm"
                 :style="{ transform: `translateX(-${currentElement * 100}%)` }">
-                <div class="min-w-full h-[200px] rounded-sm transition-transform duration-300" v-for="item in review"
-                  :key="item">
-                  <div class="flex flex-col justify-center items-center gap-2 mx-10 py-2">
+                <div class="min-w-[100%] h-auto rounded-sm transition-transform duration-300 py-4"
+                  v-for="item in review" :key="item">
+                  <div class="flex flex-col justify-center items-center gap-2">
                     <img :src="item.image" alt="" class="w-16 h-16 rounded-full object-cover">
-                    <p class="flex flex-row items-center gap-2"><span class="text-2xl font-black">{{ item.name
+                    <p class="flex flex-row items-center gap-2"><span class="text-2xl font-black">{{
+                      item.name
                         }}</span><span class="text-sm font-light">from</span><span class="text-3xl">{{ item.from
                         }}</span></p>
                     <p class="text-center">{{ item.review }}</p>
