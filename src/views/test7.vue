@@ -1,135 +1,69 @@
 <template>
     <div
-        class="flex flex-col gap-10 md:px-10 px-2 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
-
-        <!-- component introduction -->
-        <div class="flex flex-col md:flex-row md:justify-between gap-6">
-            <div class="flex flex-col md:w-[70%] w-full gap-2">
-                <h3 class="text-3xl font-black">Room Collection</h3>
-                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, ipsum nesciunt! Ut
-                    perferendis
-                    iste
-                    eveniet ipsa, doloribus similique quia odio.</p>
+        class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl gap-10 text-white relative h-auto mt-30">
+        <!-- <img src="/public/features.webp" alt="" class="abosolute top-0 left-0 rounded-xl h-[300px]"> -->
+        <div class="absolute top-0 left-0 right-0 bottom-0 p-10">
+            <div class="flex flex-col justify-center items-center gap-4">
+                <h3 class="font-black text-3xl md:text-start text-center text-white">Get better experience with us</h3>
+                <p class="font-light text-lg md:text-start text-center">
+                    Experience these exceptional services with us and make your stay truly
+                    unforgettable !
+                </p>
             </div>
-            <!-- accomodation page link -->
-            <button
-                class="flex flex-row justify-center items-center gap-4 bg-black rounded-sm text-white text-sm py-1 px-6 w-fit h-fit"
-                @click="router.push({ name: 'accomodation' })">
-                <p class="">Show all</p>
-                <ArrowRight size="18"></ArrowRight>
-            </button>
-        </div>
 
-        <!-- all room information container -->
-        <div class="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-
-            <!-- single room information card -->
-            <div class="flex flex-col gap-4 border-1 border-gray-400/50 p-4 rounded-sm shadow-sm"
-                v-for="item, index in roomList.slice(0, defaultLimit)" @mouseenter="roomCardIn(index)"
-                @mouseleave="roomCardOut(index)">
-                <img :src="item.image" :alt="item.name"
-                    class="h-full xl:max-h-[380px] lg:max-h-[300px] max-h-[350px] min-h-[100px] object-cover w-full rounded-sm duration-200"
-                    :id="`room${index}`">
-                <p class="font-semibold text-lg">{{ item.name }}</p>
-                <hr class="text-gray-400/50">
-                <div class="flex flex-row flex-wrap gap-2">
-                    <div class="flex flex-row gap-4 items-center rounded-sm px-3 py-1 cursor-default bg-gray-200 hover:bg-gray-100"
-                        v-for="i in item.featurs">
-                        <p class="sm:text-sm text-xs">{{ i.name }}</p>
-                    </div>
+            <!-- facility card collection -->
+            <!-- <div class="lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 grid grid-cols-2 md:gap-10 gap-4"> -->
+            <!-- single facility card -->
+            <!-- <div class="flex flex-row">
+                <div class="flex flex-col p-4 rounded-xl shadow-lg  h-auto absolute bg-white-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60"
+                    v-for="item in facilityList">
+                    <span class="material-icons text-yellow-400">{{ item.icon }}</span>
+                    <h4 class="font-bold text-lg md:text-start text-center text-white">{{ item.head }}</h4>
+                    <p class="md:w-full w-full max-w-[300px] min-w-[200px] lg:text-center text-center">{{
+                        item.description
+                    }}
+                    </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <p class="text-xl font-semibold">Rs. {{ item.price }}.00 <span
-                            class="font-light text-xs uppercase hidden sm:block">Per
-                            Night</span></p>
-                    <router-link to="room">
-                        <button
-                            class="bg-black hover:bg-black/90 active:bg-black/80 text-white py-1 rounded-sm cursor-pointer w-full">View</button>
-                    </router-link>
+            </div> -->
+            <div class=" flex flex-row p-2 gap-6 w-full">
+                <div class="flex flex-col justify-center items-center gap-2 bg-white-300 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 w-full p-4 rounded-lg"
+                    v-for="item in facilityList">
+                    <span class="material-icons text-yellow-400">{{ item.icon }}</span>
+                    <h4 class="font-bold text-lg md:text-start text-center text-white">{{ item.head }}</h4>
+                    <p class="md:w-full w-full max-w-[300px] min-w-[200px] lg:text-center text-center">{{
+                        item.description
+                    }}
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
 <script setup>
-import router from '@/router';
-import { ArrowRight } from 'lucide-vue-next';
-import { ref } from 'vue';
 
-const defaultLimit = ref(3) //TODO: this amount should change according to the width of the screen
+const facilityList = [
+    {
+        icon: 'pool',
+        head: 'indoor swimming pool',
+        description: 'Take a refreshing dip in our heated indoor pool, perfect for year-round relaxation'
+    },
+    {
+        icon: 'spa',
+        head: 'Spa and wellness center',
+        description: 'Unwind with soothing treatments and therapies at our serene wellness center'
+    },
+    {
+        icon: 'restaurant',
+        head: 'Restaurant',
+        description: 'Savor delicious cuisine crafted with fresh ingredients at our onsite restaurant'
+    },
+    {
+        icon: 'restaurant',
+        head: 'Free parking',
+        description: 'Enjoy hassle free parking with complementary parking for all our guests'
+    },
+]
 
-// this is for animate room card ( zoom in )
-const roomCardIn = (index) => {
-    const img = document.querySelector(`#room${index}`).classList
-    img.add('scale-105')
-}
-
-// this is for animate room card ( zoom out )
-const roomCardOut = (index) => {
-    const img = document.querySelector(`#room${index}`).classList
-    img.remove('scale-105')
-}
-
-const roomList = ref([
-    {
-        id: 0,
-        image:
-            "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_1/room1.jpg",
-        name: "Single Room",
-        price: 25000,
-        featurs: [
-            { icon: "hot_tub", name: "Hot water shower" },
-            { icon: "pool", name: "pool access" },
-            { icon: "bed", name: "king size bed" },
-        ],
-    },
-    {
-        id: 1,
-        image:
-            "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_2/room2.jpg",
-        name: "Dubble Room",
-        price: 35000,
-        featurs: [
-            { icon: "hot_tub", name: "Hot water shower" },
-            { icon: "pool", name: "pool access" },
-            { icon: "bed", name: "king size bed" },
-        ],
-    },
-    {
-        id: 2,
-        image:
-            "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_3/room3.jpg",
-        name: "Dualux Room",
-        price: 45000,
-        featurs: [
-            { icon: "hot_tub", name: "Hot water shower" },
-            { icon: "pool", name: "pool access" },
-            { icon: "bed", name: "king size bed" },
-        ],
-    },
-    {
-        id: 3,
-        image:
-            "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_4/room4.jpg",
-        name: "Hanymon Room",
-        price: 75000,
-        featurs: [
-            { icon: "hot_tub", name: "Hot water shower" },
-            { icon: "pool", name: "pool access" },
-            { icon: "bed", name: "king size bed" },
-        ],
-    },
-    {
-        id: 4,
-        image:
-            "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/rooms/room_5/room5.jpg",
-        name: "luxeryX Room",
-        price: 95000,
-        featurs: [
-            { icon: "hot_tub", name: "Hot water shower" },
-            { icon: "pool", name: "pool access" },
-            { icon: "bed", name: "king size bed" },
-        ],
-    },
-]);
 </script>
+<!-- #42442d -->

@@ -2,7 +2,7 @@
   <div class="relative">
     <Header2></Header2>
     <div class="w-full h-auto font-[Roboto] p-2 flex flex-col gap-16">
-      <Facility2></Facility2>
+      <Facility2 class="mt-4"></Facility2>
       <Gallery2 id="gallery"></Gallery2>
       <Rooms2 id="accomadation"></Rooms2>
       <QandA2 id="fandq"></QandA2>
