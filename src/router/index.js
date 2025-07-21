@@ -12,6 +12,7 @@ import Roompage from "@/views/Roompage.vue";
 // import Test4 from "@/views/test4.vue";
 // import Test5 from "@/views/test5.vue";
 import Test6 from "@/views/test6.vue";
+import Test7 from "@/views/test7.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -87,6 +88,11 @@ const router = createRouter({
       path: "/test6",
       name: "test6",
       component: Test6,
+    },
+    {
+      path: "/test7",
+      name: "test7",
+      component: Test7,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

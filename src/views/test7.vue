@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col gap-10 md:px-10 px-2 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
+        class="flex flex-col gap-10 px-10 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
         <div class="flex flex-col gap-5">
 
             <!-- review section title -->

@@ -26,15 +26,15 @@
     <hr class="md:w-full w-[50%] mx-auto text-white/30">
 
     <!-- second column of the footer -->
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
       <!-- contact detaisl -->
-      <div class="flex flex-row gap-4 w-full bord">
+      <div class="flex flex-col md:flex-row gap-4 w-full">
         <div class="w-full">
           <h4 class="font-black text-lg">Contacts</h4>
           <div class="flex flex-col gap-2 pt-4">
             <div class="flex flex-row gap-5">
               <Mail size="18"></Mail>
-              <p class="font-light text-sm capitalize">infor@kandyhills@gmail.com</p>
+              <p class="font-light text-sm capitalize">infor@kandyhills.com</p>
             </div>
             <div class="flex flex-row gap-5">
               <Phone size="18"></Phone>
@@ -52,9 +52,9 @@
       </div>
 
       <!-- accomodation page links -->
-      <div class="">
+      <div class="sm:hidden lg:block">
         <h4 class="font-black text-lg">Quick links</h4>
-        <div class="grid grid-cols-2 w-[400px] gap-2 pt-4">
+        <div class="grid md:grid-cols-2 grid-cols-1 w-[400px] gap-2 pt-4">
           <div v-for="(item, index) in pageLisks">
             <p v-if="index % 2 === 0" :key="index" class="font-light text-sm capitalize">{{ item.name }}</p>
             <p v-if="index % 2 === 1" :key="index" class="font-light text-sm capitalize">{{ item.name }}</p>
@@ -65,7 +65,7 @@
       <!-- accomodation page links -->
       <div class="">
         <h4 class="font-black text-lg">Accomodations</h4>
-        <div class="grid grid-cols-2 w-[400px] flex-col gap-2 pt-4">
+        <div class="grid md:grid-cols-2 grid-cols-1 w-[400px] flex-col gap-2 pt-4 ">
           <div v-for="(item, index) in hotelstore.roomList">
             <p v-if="index % 2 === 0" :key="index" class="font-light text-sm capitalize">{{ item.name }}</p>
             <p v-if="index % 2 === 1" :key="index" class="font-light text-sm capitalize">{{ item.name }}</p>

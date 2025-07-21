@@ -11,7 +11,7 @@
                 <img :src="item.image" alt="" class="h-[400px] rounded-lg">
                 <div class="flex flex-col gap-4">
                     <h2 class="font-black text-3xl">{{ item.name }}</h2>
-                    <p class="text-lg font-thin">{{ item.description }}</p>
+                    <p class="text-lg font-normal">{{ item.description }}</p>
                 </div>
             </div>
         </div>
