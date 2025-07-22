@@ -1,69 +1,80 @@
 <template>
-    <div
-        class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl gap-10 text-white relative h-auto mt-30">
-        <!-- <img src="/public/features.webp" alt="" class="abosolute top-0 left-0 rounded-xl h-[300px]"> -->
-        <div class="absolute top-0 left-0 right-0 bottom-0 p-10">
-            <div class="flex flex-col justify-center items-center gap-4">
-                <h3 class="font-black text-3xl md:text-start text-center text-white">Get better experience with us</h3>
-                <p class="font-light text-lg md:text-start text-center">
-                    Experience these exceptional services with us and make your stay truly
-                    unforgettable !
-                </p>
-            </div>
+    <div class="flex flex-col justify-center w-full h-auto relative mb-6">
+        <Menubar2></Menubar2>
+        <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/kandyhill.jpg" alt="hotel image"
+            class="w-full object-cover h-screen max-h-[1000px] min-h-[500px]  z-1">
 
-            <!-- facility card collection -->
-            <!-- <div class="lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 grid grid-cols-2 md:gap-10 gap-4"> -->
-            <!-- single facility card -->
-            <!-- <div class="flex flex-row">
-                <div class="flex flex-col p-4 rounded-xl shadow-lg  h-auto absolute bg-white-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60"
-                    v-for="item in facilityList">
-                    <span class="material-icons text-yellow-400">{{ item.icon }}</span>
-                    <h4 class="font-bold text-lg md:text-start text-center text-white">{{ item.head }}</h4>
-                    <p class="md:w-full w-full max-w-[300px] min-w-[200px] lg:text-center text-center">{{
-                        item.description
-                    }}
-                    </p>
-                </div>
-            </div> -->
-            <div class=" flex flex-row p-2 gap-6 w-full">
-                <div class="flex flex-col justify-center items-center gap-2 bg-white-300 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 w-full p-4 rounded-lg"
-                    v-for="item in facilityList">
-                    <span class="material-icons text-yellow-400">{{ item.icon }}</span>
-                    <h4 class="font-bold text-lg md:text-start text-center text-white">{{ item.head }}</h4>
-                    <p class="md:w-full w-full max-w-[300px] min-w-[200px] lg:text-center text-center">{{
-                        item.description
-                    }}
-                    </p>
+        <!-- this is for menu bar -->
+        <div
+            class="absolute top-0 md:h-[150px] h-[100px] left-0 right-0 bg-gradient-to-b md:from-black from-black/60  to-transparent z-2">
+        </div>
+
+        <!-- text content with booking feature - main container -->
+        <div class="flex flex-col justify-end items-center md:items-start gap-7 w-full h-full absolute z-3 text-white 
+        p-5">
+            <!-- text content with booking feature - sub container -->
+            <div
+                class="flex flex-col gap-4 bg-white-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 w-full px-4 py-2 md:w-[500px]">
+                <h1 class="text-center md:text-5xl sm:text-4xl text-3xl font-black uppercase">
+                    <span class="text-lg">The</span> <br>Kandy Hills
+                </h1>
+                <p class="text-center xl:text-sm md:text-sm text-sm font-thin uppercase">enjoy your vacation <br> with
+                    peacefull
+                    nature near to hill country town</p>
+                <button
+                    class="px-4 py-2 rounded-sm text-black bg-white hover:bg-white/90 active:bg-white/80 cursor-pointer w-full uppercase md:block hidden"
+                    v-if="!bookingSection" @click="bookingSection = true">Book
+                    Now</button>
+
+                <!-- booking section -->
+                <div class="grid grid-cols-2 gap-2 h-auto w-full rounded-sm bg-white p-4" v-if="bookingSection">
+                    <!-- select data 'from' section -->
+                    <div class="flex flex-col gap-1">
+                        <p class="text-xs text-black">From</p>
+                        <input type="date"
+                            class="border border-gray-400 w-full rounded-sm py-2 px-4 outline-none text-gray-400">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-xs text-black">To</p>
+                        <input type="date"
+                            class="border border-gray-400 w-full rounded-sm py-2 px-4 outline-none text-gray-400">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-xs text-black">Adults</p>
+                        <input type="text"
+                            class="border border-gray-400 w-full rounded-sm py-2 px-4 outline-none text-gray-400"
+                            minlength="1" maxlength="2" placeholder="02">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-xs text-black">Childs</p>
+                        <input type="text"
+                            class="border border-gray-400 w-full rounded-sm py-2 px-4 outline-none text-gray-400"
+                            placeholder="00" minlength="1" maxlength="2">
+                    </div>
+                    <button
+                        class="border col-span-2 bg-black py-2 rounded-sm border-none active:bg-[#333333] hover:bg-[#1a1a1a]"
+                        @click="searchError = true">Search</button>
+                    <!-- error message -->
+                    <div class="flex flex-row justify-center items-center gap-6 p-2 bg-red-400 rounded-sm col-span-2 text-white"
+                        v-if="searchError">
+                        <p class="">Enter valied input</p>
+                        <i class="fi fi-tr-circle-xmark" @click="searchError = false"></i>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+// import Menubar2 from './Menubar2.vue';
+import router from '@/router';
+import Menubar2 from '@/components/dummy/Menubar2.vue';
 
-const facilityList = [
-    {
-        icon: 'pool',
-        head: 'indoor swimming pool',
-        description: 'Take a refreshing dip in our heated indoor pool, perfect for year-round relaxation'
-    },
-    {
-        icon: 'spa',
-        head: 'Spa and wellness center',
-        description: 'Unwind with soothing treatments and therapies at our serene wellness center'
-    },
-    {
-        icon: 'restaurant',
-        head: 'Restaurant',
-        description: 'Savor delicious cuisine crafted with fresh ingredients at our onsite restaurant'
-    },
-    {
-        icon: 'restaurant',
-        head: 'Free parking',
-        description: 'Enjoy hassle free parking with complementary parking for all our guests'
-    },
-]
+
+const bookingSection = ref(false)
+const searchError = ref(false)
 
 </script>
-<!-- #42442d -->

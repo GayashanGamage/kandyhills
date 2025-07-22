@@ -8,7 +8,7 @@
       <QandA2 id="fandq"></QandA2>
       <Review2 id="review"></Review2>
       <Placetovisite id="blog"></Placetovisite>
-      <Searchaccomodation></Searchaccomodation>
+      <Searchaccomodation id="bookNow"></Searchaccomodation>
       <footer2></footer2>
     </div>
     <!-- this is button to scroll to top -->

@@ -3,9 +3,9 @@
     class="flex flex-col gap-10 md:px-10 px-0 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
     <div class="flex flex-col gap-2">
       <!-- title -->
-      <div class="p-4 bg-white-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40">
-        <h1 class="text-4xl uppercase font-black text-center text-black">Get better experience with us</h1>
-        <p class="text-center text-black font-light ">Experience these exceptional services with us and make your stay
+      <div class="flex flex-col gap-4">
+        <h1 class="font-black text-3xl text-center">Get better experience with us</h1>
+        <p class="font-light text-lg text-center ">Experience these exceptional services with us and make your stay
           truly
           unforgettable ! </p>
       </div>
