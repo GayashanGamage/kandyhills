@@ -80,7 +80,7 @@
     <!-- </div> -->
     <hr class="md:w-full w-[50%] mx-auto text-white/30">
     <p class="w-fit mx-auto text-sm text-center text-white/30">Design, Develop & Maintain by <span
-        class="uppercase font-black">GAMAGE.DEV</span></p>
+        class="uppercase font-black cursor-pointer" @click="developer">GAMAGE.DEV</span></p>
   </div>
 </template>
 
@@ -90,6 +90,10 @@ import router from '@/router';
 import { hotelStore } from '@/stores/hotelStore';
 import { Mail, Phone } from 'lucide-vue-next';
 import { ref } from 'vue';
+
+const developer = () => {
+  window.open('https://gamage.dev', '_blank');
+}
 
 const hotelstore = hotelStore()
 const pageLisks = ref([
