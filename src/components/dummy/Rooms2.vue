@@ -41,10 +41,10 @@
           <p class="text-xl font-semibold">Rs. {{ item.price }}.00 <span
               class="font-light text-xs uppercase hidden sm:block">Per
               Night</span></p>
-          <router-link to="room">
+          <!-- <router-link to="room">
             <button
               class="bg-black hover:bg-black/90 active:bg-black/80 text-white py-1 rounded-sm cursor-pointer w-full">View</button>
-          </router-link>
+          </router-link> -->
         </div>
       </div>
     </div>
