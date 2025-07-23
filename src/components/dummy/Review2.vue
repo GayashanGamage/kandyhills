@@ -20,7 +20,7 @@
         <!-- booking site refference -->
         <div class="flex flex-col gap-4">
           <p class="text-lg font-light">
-            Discover what makes [ resort name ] a favorite escape ! from stunning
+            Discover what makes Kandy hills a favorite escape ! from stunning
             views to exceptional service, here is a glimpse of what our guests
             love about the stay
           </p>
@@ -107,7 +107,7 @@ const platformsRatings = ref([
     URL: "https://www.agoda.com/kandy-hills-resort/hotel/kandy-lk.html?ds=UkYtt9JOOA9wpOhJ",
   },
   {
-    platform: "public/airbnb.png",
+    platform: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/common/airbnb.png",
     score: 5,
     rating: 4,
     URL: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/common/airbnb.png",

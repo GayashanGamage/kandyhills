@@ -8,10 +8,8 @@
                 class="flex md:flex-row flex-col md:justify-between md:items-center justify-start items-start w-full md:gap-0 gap-6">
                 <div class="flex flex-col gap-4">
                     <h3 class="font-black text-3xl">Enjoy surrounding areas</h3>
-                    <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-                        similique provident
-                        quam
-                        veritatis adipisci quae aliquid esse autem sint eligendi?</p>
+                    <p class="text-lg font-light">From scenic landscape to local attractions, enjoy everything the
+                        surrounding area has to offer</p>
                 </div>
                 <button
                     class="flex flex-row justify-center items-center gap-4 bg-black rounded-sm text-white text-sm py-1 px-6"

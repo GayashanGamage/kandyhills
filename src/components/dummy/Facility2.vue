@@ -13,7 +13,7 @@
     <div
       class="flex flex-col justify-center w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl gap-10 text-white relative h-auto">
       <img :src="hotelstore.gallery[6].url" alt=""
-        class="abosolute top-0 left-0 rounded-xl lg:h-[380px] md:h-[525px] sm:h-[400px] h-[525px] object-cover">
+        class="abosolute top-0 left-0 rounded-xl lg:h-[380px] md:h-[525px] sm:h-[400px] h-[600px] object-cover">
       <div class="flex flex-col justify-center items-center absolute top-0 left-0 right-0 bottom-0 md:p-6 p-2">
         <div class="grid lg:grid-cols-4 grid-cols-2 md:gap-6 gap-1 w-fit">
 

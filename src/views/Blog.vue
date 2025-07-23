@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col md:gap-18 gap-8">
-        <SubPageHead pagetitle="Place to visit"
+        <SubPageHead pagetitle="Places to visit"
             pagedescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, voluptas totam quis ad animi molestias deserunt dicta possimus minima?">
         </SubPageHead>
         <div class="w-full h-auto font-[Roboto] p-2 flex flex-col gap-16">

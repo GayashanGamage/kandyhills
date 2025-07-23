@@ -4,12 +4,10 @@
 
     <!-- component introduction -->
     <div class="flex flex-col md:flex-row md:justify-between gap-6">
-      <div class="flex flex-col md:w-[70%] w-full gap-2">
-        <h3 class="text-3xl font-black">Room Collection</h3>
-        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, ipsum nesciunt! Ut
-          perferendis
-          iste
-          eveniet ipsa, doloribus similique quia odio.</p>
+      <div class="flex flex-col gap-4 md:w-[70%] w-full">
+        <h3 class="text-3xl font-black">Our Signature rooms</h3>
+        <p class="font-light text-lg">Explore a selection of our cozy, well apointed rooms - perfect for both relaxation
+          and luxury</p>
       </div>
       <!-- accomodation page link -->
       <button

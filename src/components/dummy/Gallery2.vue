@@ -2,7 +2,7 @@
   <div
     class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl md:px-10 px-4 py-18 gap-10 bg-[#f6f8fa]">
     <div class="flex flex-col gap-4">
-      <h3 class="font-black text-3xl">How we looks like</h3>
+      <h3 class="font-black text-3xl">A Glimpse of Our gallery</h3>
       <p class="font-light text-lg">
         Experience these exceptional services with us and make your stay truly
         unforgettable !

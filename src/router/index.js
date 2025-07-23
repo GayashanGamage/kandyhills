@@ -30,6 +30,12 @@ const router = createRouter({
       component: Acoomodation,
     },
     {
+      path: "/accomodation/:roomid",
+      name: "roomdetails",
+      component: Roompage,
+      props: true,
+    },
+    {
       path: "/gallery",
       name: "gallery",
       component: Gallery,
@@ -44,11 +50,16 @@ const router = createRouter({
       name: "review",
       component: Review,
     },
-    {
-      path: "/room",
-      name: "room",
-      component: Roompage,
-    },
+    // {
+    //   path: "/room",
+    //   name: "room",
+    //   component: Roompage,
+    //   children : {
+    //     path: ":id",
+    //     name: "roomdetails",
+    //     component: Roompage,
+    //   }
+    // },
     {
       path: "/blog",
       name: "blog",

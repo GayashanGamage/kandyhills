@@ -13,7 +13,7 @@
 
                     <!-- single room information card -->
                     <div class="flex flex-col gap-4 border-1 border-gray-400/50 p-2 rounded-sm shadow-sm"
-                        v-for="item in hotelstore.roomList">
+                        v-for="item, index in hotelstore.roomList">
                         <img :src="item.image" :alt="item.name"
                             class="h-full xl:max-h-[380px] lg:max-h-[300px] max-h-[350px] min-h-[100px] object-cover w-full rounded-sm">
                         <p class="font-semibold text-lg">{{ item.name }}</p>
@@ -28,10 +28,11 @@
                             <p class="text-xl font-semibold">Rs. {{ item.price }}.00 <span
                                     class="font-light text-xs uppercase">Per
                                     Night</span></p>
-                            <router-link to="room">
-                                <button
-                                    class="bg-black hover:bg-black/90 active:bg-black/80 text-white py-1 rounded-sm cursor-pointer w-full">View</button>
-                            </router-link>
+                            <!-- <router-link to="room">
+                            </router-link> -->
+                            <button
+                                class="bg-black hover:bg-black/90 active:bg-black/80 text-white py-1 rounded-sm cursor-pointer w-full"
+                                @click="viewRoomDetails(index)">View</button>
                         </div>
                     </div>
                 </div>
@@ -45,6 +46,13 @@
 import Footer2 from '@/components/dummy/Footer2.vue';
 import Searchaccomodation from '@/components/dummy/Searchaccomodation.vue';
 import SubPageHead from '@/components/dummy/SubPageHead.vue';
+import router from '@/router';
 import { hotelStore } from '@/stores/hotelStore';
 const hotelstore = hotelStore()
+
+const viewRoomDetails = (room) => {
+    const roomId = Number(room);
+    router.push({ name: 'roomdetails', params: { roomid: roomId } });
+};
+
 </script>
