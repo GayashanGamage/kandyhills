@@ -302,16 +302,6 @@ export const hotelStore = defineStore("hotel  ", () => {
   const review = ref([
     {
       image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
-      from: "🇩🇪",
-      name: "Christian Joe",
-      review: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est alias repellendus impedit tenetur officia doloribus nam ad nulla quis fuga!",
-      platform: {
-        name: "Booking.com",
-        url: "https://www.booking.com/hotel/lk/kandy-hills.html",
-      }
-    },
-    {
-      image: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/dumy-three/review/person_1.jpeg",
       from: "🇺🇸",
       name: "Sarah Johnson",
       review: "Absolutely stunning location with breathtaking views. The staff went above and beyond to make our stay memorable. Will definitely return for another visit soon!",

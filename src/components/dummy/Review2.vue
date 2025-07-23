@@ -53,7 +53,7 @@
                 class="flex flex-row transition-transform duration-500 border border-gray-200 bg-white shadow-sm rounded-sm"
                 :style="{ transform: `translateX(-${currentElement * 100}%)` }">
                 <div class="min-w-[100%] h-auto rounded-sm transition-transform duration-300 py-4"
-                  v-for="item in review" :key="item">
+                  v-for="item in hotelstore.review.slice(currentElement, currentElement + 4)" :key="item">
                   <div class="flex flex-col justify-center items-center gap-2">
                     <img :src="item.image" alt="" class="w-16 h-16 rounded-full object-cover">
                     <p class="flex flex-row items-center gap-2"><span class="text-2xl font-black">{{
@@ -84,22 +84,24 @@
 
 <script setup>
 import router from "@/router";
+import { hotelStore } from "@/stores/hotelStore";
 import { ChevronLeft, ChevronRight, ChevronsLeft, MoveRight, Star } from "lucide-vue-next";
 ChevronLeft
 import { ref, watch } from 'vue';
+const hotelstore = hotelStore()
 
 const currentElement = ref(0)
 const countries = ref(['India', 'USA', 'Canada', 'Australia', 'Germany', 'France', 'Japan', 'China', 'Brazil', 'Russia']);
 
 const platformsRatings = ref([
   {
-    platform: 'public/booking.png',
+    platform: 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/common/booking.png',
     score: 10,
     rating: 8,
     URL: "https://www.booking.com/hotel/lk/kandy-hills.html",
   },
   {
-    platform: "public/agoda.png",
+    platform: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/common/agoda.png",
     score: 10,
     rating: 7,
     URL: "https://www.agoda.com/kandy-hills-resort/hotel/kandy-lk.html?ds=UkYtt9JOOA9wpOhJ",
@@ -108,7 +110,7 @@ const platformsRatings = ref([
     platform: "public/airbnb.png",
     score: 5,
     rating: 4,
-    URL: "https://www.airbnb.com/rooms/1293392601467945885?source_impression_id=p3_1752857116_P3Gaye1gjKN4WA9o",
+    URL: "https://hotelprojects.blr1.cdn.digitaloceanspaces.com/common/airbnb.png",
   },
 ]);
 
