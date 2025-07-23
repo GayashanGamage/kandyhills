@@ -11,12 +11,6 @@
       <Searchaccomodation id="bookNow"></Searchaccomodation>
       <footer2></footer2>
     </div>
-    <!-- this is button to scroll to top -->
-    <div class="flex flex-col justify-center items-center w-7 h-7 bg-black rounded-full fixed right-0 bottom-0 m-20">
-      <p class="" @click="scrollToTop">
-        <i class="fi fi-sr-angle-circle-up text-4xl text-yellow-400"></i>
-      </p>
-    </div>
   </div>
 </template>
 <script setup>

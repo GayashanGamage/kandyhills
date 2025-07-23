@@ -14,8 +14,8 @@
         p-5">
       <!-- text content with booking feature - sub container -->
       <div
-        class="flex flex-col gap-4 bg-white-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 w-full px-4 py-2 md:w-[500px]">
-        <h1 class="text-center md:text-5xl sm:text-4xl text-3xl font-black uppercase">
+        class="flex flex-col gap-4 bg-white-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xs bg-opacity-40 w-full px-4 py-2 md:w-[500px]">
+        <h1 class="text-center md:text-5xl text-6xl font-black uppercase">
           <span class="text-lg">The</span> <br>Kandy Hills
         </h1>
         <p class="text-center xl:text-sm md:text-sm text-sm font-thin uppercase">enjoy your vacation <br> with
