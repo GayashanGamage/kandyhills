@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-18">
+    <div class="flex flex-col md:gap-18 gap-8">
         <SubPageHead pagetitle="FAQ"
             pagedescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odit veniam a nesciunt aliquam, iste voluptate repellendus veritatis minima quos.">
         </SubPageHead>
@@ -10,15 +10,15 @@
 
                 <!-- question filters -->
                 <div
-                    class="flex flex-row justify-center items-center gap-6 px-10 py-8 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto">
-                    <p class="py-2 px-6 rounded-full hover:cursor-default"
+                    class="grid md:grid-cols-4 grid-cols-2 justify-center items-center md:gap-6 gap-2 md:px-10 px-2 py-8 max-w-[1450px] min-w-[200px] h-auto mx-auto w-fit">
+                    <p class="py-2 px-6 rounded-full hover:cursor-default w-fit md:min-w-[200px] min-w-[150px] text-center md:text-base text-sm"
                         :class="{ 'bg-gray-200': index !== selectedCategory, 'bg-black text-white': index == selectedCategory }"
                         v-for="item, index in allCategories" @click="selectedCategory = index">{{ item }}
                     </p>
                 </div>
 
                 <div
-                    class="flex flex-col gap-6 px-10 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
+                    class="flex flex-col gap-6 md:px-10 px-2 md:py-18 py-8 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
                     <div class="flex flex-col gap-6">
                         <!-- single F&Q section -->
                         <div class="flex flex-col gap-4 cursor-pointer select-none"

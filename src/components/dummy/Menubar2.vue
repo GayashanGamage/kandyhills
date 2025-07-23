@@ -8,13 +8,15 @@
       <li class="hover:underline"><a href="#accomadation" class="" v-smooth-scroll>Accomodation</a></li>
       <li class="hover:underline"><a href="#fandq" v-smooth-scroll>F&Q</a></li>
       <li class="hover:underline"><a href="#review" v-smooth-scroll>Review</a></li>
-      <li class="hover:underline"><a href="#blog" v-smooth-scroll>Blog</a></li>
+      <li class="hover:underline"><a href="#PlaceToVisit" v-smooth-scroll>place to visit</a></li>
       <button class="flex flex-row justify-center center items-center border py-2 px-6 rounded-sm bg-white"><i
           class="fi fi-sr-circle-phone pr-4 text-black"></i><span class="text-black whitespace-nowrap">071 899 12
           34</span></button>
     </ul>
     <i class="fi fi-br-menu-burger md:hidden block text-3xl ml-auto px-2 py-2" @click="mobileMenu = true"></i>
   </div>
+
+  <!-- mobile menu view -->
   <div class="flex flex-col fixed top-0 bottom-0 left-0 right-0 bg-black/70 z-10 md:hidden" v-if="mobileMenu">
     <div class="flex flex-col justify-center items-start w-[80%] h-screen bg-white ml-auto sm:p-20 p-10"
       ref="menuOutside">
@@ -22,17 +24,19 @@
         <li class="">
           <i class="fi fi-sr-circle-xmark text-2xl" @click="mobileMenu = false"></i>
         </li>
-        <li class="hover:underline"><a href="#facility" @click="mobileMenu = false">Facility</a></li>
-        <li class="hover:underline">Gallery</li>
-        <li class="hover:underline">Accomodation</li>
-        <li class="hover:underline"><a href="#fandq" @click="mobileMenu = false">F&Q</a></li>
-        <li class="hover:underline"><a href="#review" @click="mobileMenu = false">Review</a></li>
+        <li class="hover:underline" @click="redirectPage('home2')">Home</li>
+        <li class="hover:underline" @click="redirectPage('gallery')">Gallery</li>
+        <li class="hover:underline" @click="redirectPage('accomodation')">Accomodation</li>
+        <li class="hover:underline"><a href="#fandq" @click="redirectPage('faq')">F&Q</a></li>
+        <li class="hover:underline"><a href="#review" @click="redirectPage('review')">Review</a></li>
+        <li class="hover:underline"><a href="#review" @click="redirectPage('blog')">Place To Visit</a></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
+import router from '@/router';
 import { onClickOutside, useWindowSize } from '@vueuse/core';
 import { ref, watch } from 'vue';
 
@@ -52,4 +56,10 @@ watch(width, (newVal, oldVal) => {
     closeSidedMenu()
   }
 })
+
+const redirectPage = (routerName) => {
+  mobileMenu.value = false
+  router.push({ name: routerName });
+}
+
 </script>

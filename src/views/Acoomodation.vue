@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-18">
+    <div class="flex flex-col md:gap-18 gap-10">
         <SubPageHead pagetitle="Accomodation"
             pagedescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odit veniam a nesciunt aliquam, iste voluptate repellendus veritatis minima quos.">
         </SubPageHead>
@@ -7,7 +7,7 @@
 
             <!-- content container -->
             <div
-                class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl px-10 py-18 gap-10 bg-[#f6f8fa]">
+                class="flex flex-col w-full max-w-[1450px] min-w-[200px] mx-auto rounded-2xl md:px-10 px-2 md:py-18 py-6 gap-10 bg-[#f6f8fa]">
                 <!-- all room information container -->
                 <div class="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
 
@@ -36,7 +36,6 @@
                     </div>
                 </div>
             </div>
-            <i class="fi fi-sr-swimmer"></i>
             <Searchaccomodation></Searchaccomodation>
             <Footer2></Footer2>
         </div>

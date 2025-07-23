@@ -7,7 +7,7 @@
       <Rooms2 id="accomadation"></Rooms2>
       <QandA2 id="fandq"></QandA2>
       <Review2 id="review"></Review2>
-      <Placetovisite id="blog"></Placetovisite>
+      <Placetovisite id="PlaceToVisit"></Placetovisite>
       <Searchaccomodation id="bookNow"></Searchaccomodation>
       <footer2></footer2>
     </div>

@@ -1,6 +1,6 @@
 // import Home from "@/views/Home.vue";
-import Blog from "@/components/dummy/Blog.vue";
 import Acoomodation from "@/views/Acoomodation.vue";
+import Blog from "@/views/Blog.vue";
 import FaQ from "@/views/FaQ.vue";
 import Gallery from "@/views/Gallery.vue";
 import Home2 from "@/views/Home2.vue";

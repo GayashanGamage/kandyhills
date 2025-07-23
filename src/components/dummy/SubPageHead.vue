@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center md:h-[35vh] h-[40vh] relative">
+    <div class="flex flex-col items-center md:h-[35vh] h-[30vh] relative">
         <!-- desktop menu section -->
         <div
             class="flex flex-row w-full h-auto absolute top-0 left-0 right-0 z-10 text-black p-10 lg:text-lg md:text-base font-medium cursor-default bg-gradient-to-t from-slate-0 to-zinc-900">
@@ -9,7 +9,7 @@
                 <li class="hover:underline"><router-link to="/accomodation">Accomodation</router-link></li>
                 <li class="hover:underline"><router-link to="/faq">F&Q</router-link></li>
                 <li class="hover:underline"><router-link to="/reviews">Reviews</router-link></li>
-                <li class="hover:underline"><router-link to="/blog">Blog</router-link></li>
+                <li class="hover:underline"><router-link to="/blog">Place to visit</router-link></li>
                 <button class="flex flex-row justify-center center items-center border py-2 px-6 rounded-sm bg-white"><i
                         class="fi fi-sr-circle-phone pr-4 text-black"></i><span class="text-black whitespace-nowrap">071
                         899 12
@@ -22,7 +22,7 @@
             class="absolute top-0 left-0 right-0 bottom-0 h-full object-cover w-full z-1">
         <div class="flex flex-col gap-4 justify-center items-center absolute bottom-10 left-0 right-0 z-10 w-full">
             <div class="flex flex-col justify-center items-center gap-2 rounded-full bg-black/60 text-white  px-6 py-4">
-                <h1 class="font-semibold text-2xl uppercase text-center">
+                <h1 class="font-semibold md:text-2xl text-xl uppercase text-center">
                     {{ pagetitle }}</h1>
                 <!-- <p class="w-[700px] text-center font-light md:block hidden">{{ pagedescription }}</p> -->
             </div>
@@ -42,6 +42,7 @@
                 <li class="hover:underline" @click="redirectPage('accomodation')">Accomodation</li>
                 <li class="hover:underline"><a href="#fandq" @click="redirectPage('faq')">F&Q</a></li>
                 <li class="hover:underline"><a href="#review" @click="redirectPage('review')">Review</a></li>
+                <li class="hover:underline"><a href="#review" @click="redirectPage('blog')">Place to visit</a></li>
             </ul>
         </div>
     </div>

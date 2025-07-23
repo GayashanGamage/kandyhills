@@ -1,11 +1,13 @@
 <template>
     <div
-        class="flex flex-col gap-6 sm:px-10 px-2 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa]">
+        class="flex flex-col gap-6 sm:px-10 px-2 py-18 w-full max-w-[1450px] min-w-[200px] h-auto mx-auto rounded-2xl bg-[#f6f8fa] ">
         <div class="flex flex-col gap-5">
 
             <!-- review section title -->
             <h3 class="font-black text-3xl text-center uppercase">Book now</h3>
-            <p class="text-center xl:text-sm md:text-xl text-lg font-thin uppercase">enjoy your vacation <br> with
+            <p class="text-center xl:text-sm md:text-xl text-base font-thin uppercase w-[80%] mx-auto">enjoy your
+                vacation <br>
+                with
                 peacefull
                 nature near to hill country town</p>
             <!-- <div class=""> -->

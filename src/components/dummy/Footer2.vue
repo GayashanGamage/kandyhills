@@ -56,8 +56,11 @@
         <h4 class="font-black text-lg">Quick links</h4>
         <div class="grid md:grid-cols-2 grid-cols-1 w-[400px] gap-2 pt-4">
           <div v-for="(item, index) in pageLisks">
-            <p v-if="index % 2 === 0" :key="index" class="font-light text-sm capitalize">{{ item.name }}</p>
-            <p v-if="index % 2 === 1" :key="index" class="font-light text-sm capitalize">{{ item.name }}</p>
+            <p v-if="index % 2 === 0" :key="index" class="font-light text-sm capitalize cursor-pointer hover:underline"
+              @click="router.push({ name: item.link })">{{ item.name }}</p>
+            <p v-if="index % 2 === 1" :key="index" class="font-light text-sm capitalize cursor-pointer hover:underline"
+              @click="router.push({ name: item.link })">
+              {{ item.name }}</p>
           </div>
         </div>
       </div>
@@ -77,12 +80,13 @@
     <!-- </div> -->
     <hr class="md:w-full w-[50%] mx-auto text-white/30">
     <p class="w-fit mx-auto text-sm text-center text-white/30">Design, Develop & Maintain by <span
-        class="uppercase font-black">myhotel</span></p>
+        class="uppercase font-black">GAMAGE.DEV</span></p>
   </div>
 </template>
 
 <!-- TODO add a tag and build a correct link -->
 <script setup>
+import router from '@/router';
 import { hotelStore } from '@/stores/hotelStore';
 import { Mail, Phone } from 'lucide-vue-next';
 import { ref } from 'vue';
@@ -91,23 +95,23 @@ const hotelstore = hotelStore()
 const pageLisks = ref([
   {
     name: 'accomodation',
-    link: '/accomodation'
+    link: 'accomodation'
   },
   {
     name: 'gallery',
-    link: '/gallery'
+    link: 'gallery'
   },
   {
     name: 'faq',
-    link: '/faq'
+    link: 'faq'
   },
   {
     name: 'reviews',
-    link: '/reviews'
+    link: 'review'
   },
   {
-    name: 'room',
-    link: '/room'
+    name: 'blog',
+    link: 'blog'
   },
 ])
 
